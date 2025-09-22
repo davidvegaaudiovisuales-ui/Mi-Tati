@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti ❤️</title>
+  <style>
+    body {
+      background-color: pink;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      text-align: center;
+    }
+
+    /* Corazón con animación de latido */
+    .heart {
+      position: relative;
+      width: 200px;
+      height: 180px;
+      background-color: red;
+      transform: rotate(-45deg);
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      animation: beat 1s infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: red;
+    }
+    .heart::before {
+      top: -100px;
+      left: 0;
+    }
+    .heart::after {
+      left: 100px;
+      top: 0;
+    }
+
+    /* Animación de latido */
+    @keyframes beat {
+      0%, 100% { transform: rotate(-45deg) scale(1); }
+      50% { transform: rotate(-45deg) scale(1.2); }
+    }
+
+    /* Texto debajo del corazón */
+    .text {
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+  <div class="text">💌❤️😢 ¿Me perdonas mi Tati? ❤️💌🙏</div>
+</body>
+</html>
